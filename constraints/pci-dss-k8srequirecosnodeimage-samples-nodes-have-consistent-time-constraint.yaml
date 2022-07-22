@@ -1,0 +1,6 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRequireCosNodeImage
+metadata:
+  name: nodes-have-consistent-time
+spec:
+  enforcementAction: dryrun

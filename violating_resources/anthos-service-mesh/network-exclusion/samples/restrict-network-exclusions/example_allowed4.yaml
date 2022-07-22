@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: everything-included-with-no-exclusions
+  labels:
+    app: nginx
+  annotations:
+    traffic.sidecar.istio.io/includeInboundPorts: "*"
+    traffic.sidecar.istio.io/includeOutboundPorts: "*"
+    traffic.sidecar.istio.io/includeOutboundIPRanges: "*"
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    ports:
+    - containerPort: 80

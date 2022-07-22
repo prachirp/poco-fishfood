@@ -1,0 +1,29 @@
+kind: Suite
+apiVersion: test.gatekeeper.sh/v1alpha1
+metadata:
+  name: k8snoenvvarsecrets
+tests:
+  - name: k8snoenvvarsecrets
+    template: template.yaml
+    constraint: samples/no-secrets-as-env-vars/constraint.yaml
+    cases:
+      - name: example-allowed
+        object: samples/no-secrets-as-env-vars/example_allowed.yaml
+        assertions:
+          - violations: no
+      - name: example-disallowed
+        object: samples/no-secrets-as-env-vars/example_disallowed.yaml
+        assertions:
+          - violations: yes
+  - name: cis-k8snoenvvarsecrets
+    template: template.yaml
+    constraint: samples/cis-k8s-1.5.1/5.4.1_no-secrets-as-env-vars.yaml
+    cases:
+      - name: example-allowed
+        object: samples/no-secrets-as-env-vars/example_allowed.yaml
+        assertions:
+          - violations: no
+      - name: example-disallowed
+        object: samples/no-secrets-as-env-vars/example_disallowed.yaml
+        assertions:
+          - violations: yes

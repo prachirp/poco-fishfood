@@ -1,0 +1,11 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sContainerRatios
+metadata: # kpt-merge: /container-must-meet-ratio
+  name: container-must-meet-ratio
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    ratio: "2"

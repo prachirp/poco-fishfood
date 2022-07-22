@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: allowed-example
+spec:
+  containers:
+  - name: test
+    image: redis
+    volumeMounts:
+    - name: test
+      mountPath: "/etc/test"
+      readOnly: true
+  volumes:
+  - name: test
+    secret:
+      secretName: mysecret

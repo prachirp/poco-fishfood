@@ -1,0 +1,29 @@
+kind: Suite
+apiVersion: test.gatekeeper.sh/v1alpha1
+metadata: # kpt-merge: /requiredlabels
+  name: requiredlabels
+tests:
+- name: block-endpoint-default-role
+  template: template.yaml
+  constraint: samples/all-must-have-owner/constraint.yaml
+  cases:
+  - name: example-allowed
+    object: samples/all-must-have-owner/example_allowed.yaml
+    assertions:
+    - violations: no
+  - name: example-disallowed
+    object: samples/all-must-have-owner/example_disallowed.yaml
+    assertions:
+    - violations: yes
+- name: pci-resources-have-required-labels
+  template: template.yaml
+  constraint: samples/pci-dss-3.2.1/1.1.4_pci-resources-have-required-labels.yaml
+  cases:
+  - name: example-allowed
+    object: samples/pci-dss-3.2.1/example_allowed.yaml
+    assertions:
+    - violations: no
+  - name: example-disallowed
+    object: samples/pci-dss-3.2.1/example_disallowed.yaml
+    assertions:
+    - violations: yes

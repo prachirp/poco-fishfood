@@ -1,0 +1,24 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: source-principals-wildcard
+spec:
+  selector:
+    matchLabels:
+      app: httpbin
+  rules:
+    - from:
+        - source:
+            principals: ["*"]
+        - source:
+            namespaces: ["test"]
+      to:
+        - operation:
+            methods: ["GET"]
+            paths: ["/info*"]
+        - operation:
+            methods: ["POST"]
+            paths: ["/data"]
+      when:
+        - key: request.auth.claims[iss]
+          values: ["https://accounts.google.com"]

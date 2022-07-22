@@ -1,0 +1,49 @@
+kind: Suite
+apiVersion: test.gatekeeper.sh/v1alpha1
+metadata:
+  name: k8sprohibitrolewildcardaccess
+tests:
+  - name: k8sprohibitrolewildcardaccess
+    template: template.yaml
+    constraint: samples/prohibit-role-wildcard-access/constraint.yaml
+    cases:
+      - name: example-allowed
+        object: samples/prohibit-role-wildcard-access/example_allowed.yaml
+        assertions:
+          - violations: no
+      - name: example-disallowed
+        object: samples/prohibit-role-wildcard-access/example_disallowed.yaml
+        assertions:
+          - violations: yes
+  - name: k8sprohibitrolewildcardexceptallowed
+    template: template.yaml
+    constraint: samples/prohibit-wildcard-except-exempted-roles/constraint.yaml
+    cases:
+      - name: example_cluster-role-allowed
+        object: samples/prohibit-wildcard-except-exempted-roles/example_cluster-role-allowed.yaml
+        assertions:
+          - violations: no
+      - name: example_cluster-role-disallowed
+        object: samples/prohibit-wildcard-except-exempted-roles/example_cluster-role-disallowed.yaml
+        assertions:
+          - violations: yes
+      - name: example_role-allowed
+        object: samples/prohibit-wildcard-except-exempted-roles/example_role-allowed.yaml
+        assertions:
+          - violations: no
+      - name: example_role-disallowed
+        object: samples/prohibit-wildcard-except-exempted-roles/example_role-disallowed.yaml
+        assertions:
+          - violations: yes
+  - name: cis-k8sprohibitrolewildcardaccess
+    template: template.yaml
+    constraint: samples/cis-k8s-1.5.1/5.1.3_prohibit-role-wildcard-access.yaml
+    cases:
+      - name: example-allowed
+        object: samples/cis-k8s-1.5.1/example_allowed.yaml
+        assertions:
+          - violations: no
+      - name: example-disallowed
+        object: samples/cis-k8s-1.5.1/example_disallowed.yaml
+        assertions:
+          - violations: yes

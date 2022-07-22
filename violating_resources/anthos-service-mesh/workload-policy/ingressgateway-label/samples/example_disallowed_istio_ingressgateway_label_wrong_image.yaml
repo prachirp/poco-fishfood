@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sleep
+  labels:
+    app: sleep
+    istio: ingressgateway
+spec:
+  containers:
+  - name: sleep
+    image: curlimages/curl

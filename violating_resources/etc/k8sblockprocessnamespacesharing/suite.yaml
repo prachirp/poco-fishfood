@@ -1,0 +1,17 @@
+kind: Suite
+apiVersion: test.gatekeeper.sh/v1alpha1
+metadata:
+  name: k8sblockprocessnamespacesharing
+tests:
+  - name: k8sblockprocessnamespacesharing
+    template: template.yaml
+    constraint: samples/block-process-namespace-sharing/constraint.yaml
+    cases:
+      - name: example-allowed
+        object: samples/block-process-namespace-sharing/example_allowed.yaml
+        assertions:
+          - violations: no
+      - name: example-disallowed
+        object: samples/block-process-namespace-sharing/example_disallowed.yaml
+        assertions:
+          - violations: yes

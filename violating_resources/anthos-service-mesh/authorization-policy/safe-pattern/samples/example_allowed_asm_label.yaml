@@ -1,0 +1,14 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: good-authz-policy-asm-ingress
+spec:
+  selector:
+    matchLabels:
+      asm: ingressgateway
+  action: ALLOW
+  rules:
+  - to:
+    - operation:
+        methods: ["GET"]
+        hosts: ["test.com", "test.com:*"]

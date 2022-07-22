@@ -1,0 +1,7 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sEmptyDirHasSizeLimit
+metadata:
+  name: empty-dir-has-size-limit
+spec:
+  parameters:
+    maxSizeLimit: 4Gi

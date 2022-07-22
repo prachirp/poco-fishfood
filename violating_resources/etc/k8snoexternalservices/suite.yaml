@@ -1,0 +1,29 @@
+kind: Suite
+apiVersion: test.gatekeeper.sh/v1alpha1
+metadata:
+  name: k8snoexternalservices
+tests:
+  - name: k8snoexternalservices
+    template: template.yaml
+    constraint: samples/no-external/constraint.yaml
+    cases:
+      - name: example-allowed
+        object: samples/no-external/example_allowed.yaml
+        assertions:
+          - violations: no
+      - name: example-disallowed
+        object: samples/no-external/example_disallowed.yaml
+        assertions:
+          - violations: yes
+  - name: k8snoexternalservices-aws
+    template: template.yaml
+    constraint: samples/aws-lb/constraint.yaml
+    cases:
+      - name: example-allowed
+        object: samples/aws-lb/example_allowed.yaml
+        assertions:
+          - violations: no
+      - name: example-disallowed
+        object: samples/aws-lb/example_disallowed.yaml
+        assertions:
+          - violations: yes

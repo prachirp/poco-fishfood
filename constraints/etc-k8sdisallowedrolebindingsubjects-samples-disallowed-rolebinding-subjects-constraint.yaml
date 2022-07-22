@@ -1,0 +1,10 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sDisallowedRoleBindingSubjects
+metadata:
+  name: disallowed-rolebinding-subjects
+spec:
+  parameters:
+    disallowedSubjects:
+    - name: 'system:unauthenticated'
+      kind: Group
+      apiGroup: rbac.authorization.k8s.io

@@ -1,0 +1,21 @@
+kind: Suite
+apiVersion: test.gatekeeper.sh/v1alpha1
+metadata:
+  name: disallowedauthzprefix
+tests:
+  - name: disallowed-authz-prefix-constraint
+    template: template.yaml
+    constraint: samples/disallowed-authz-prefix-constraint/constraint.yaml
+    cases:
+      - name: bad-prefix
+        object: samples/disallowed-authz-prefix-constraint/example_disallowed_bad_prefix.yaml
+        assertions:
+          - violations: yes
+      - name: bad-namespace
+        object: samples/disallowed-authz-prefix-constraint/example_disallowed_bad_namespace.yaml
+        assertions:
+          - violations: yes
+      - name: valid-namespace-and-prefix
+        object: samples/disallowed-authz-prefix-constraint/example_allowed.yaml
+        assertions:
+          - violations: no

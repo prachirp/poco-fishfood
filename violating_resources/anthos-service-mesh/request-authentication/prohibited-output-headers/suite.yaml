@@ -1,0 +1,21 @@
+kind: Suite
+apiVersion: test.gatekeeper.sh/v1alpha1
+metadata:
+  name: asm-request-authn-prohibited-output-headers
+tests:
+  - name: asm-request-authn-prohibited-output-headers
+    template: template.yaml
+    constraint: samples/constraint.yaml
+    cases:
+      - name: bad-well-known-header
+        object: samples/example_disallowed_well_known_header.yaml
+        assertions:
+          - violations: yes
+      - name: bad-predefined-header
+        object: samples/example_disallowed_predefined_header.yaml
+        assertions:
+          - violations: yes
+      - name: valid-output-header
+        object: samples/example_allowed.yaml
+        assertions:
+          - violations: no

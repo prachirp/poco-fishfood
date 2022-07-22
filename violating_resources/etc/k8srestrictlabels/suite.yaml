@@ -1,0 +1,17 @@
+kind: Suite
+apiVersion: test.gatekeeper.sh/v1alpha1
+metadata:
+  name: k8srestrictlabels
+tests:
+  - name: k8srestrictlabels
+    template: template.yaml
+    constraint: samples/restrict-label-example/constraint.yaml
+    cases:
+      - name: example-allowed
+        object: samples/restrict-label-example/example_allowed.yaml
+        assertions:
+          - violations: no
+      - name: example-disallowed
+        object: samples/restrict-label-example/example_disallowed.yaml
+        assertions:
+          - violations: yes

@@ -1,0 +1,11 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: hosts-on-noningress
+spec:
+  action: ALLOW
+  rules:
+  - to:
+    - operation:
+        methods: ["GET"]
+        hosts: ["test.com", "test.com:*"]

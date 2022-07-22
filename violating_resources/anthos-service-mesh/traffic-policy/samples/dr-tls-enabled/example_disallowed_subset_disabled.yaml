@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: dr-subset-tls-disable
+  namespace: default
+spec:
+  host: myservice
+  subsets:
+    - name: v1
+      trafficPolicy:
+        tls:
+          mode: DISABLE
+    - name: v2
+      trafficPolicy:
+        tls:
+          mode: SIMPLE

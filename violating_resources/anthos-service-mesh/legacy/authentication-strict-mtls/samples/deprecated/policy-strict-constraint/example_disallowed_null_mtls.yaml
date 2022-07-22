@@ -1,0 +1,9 @@
+# "Policy" is deprecated: https://istio.io/latest/blog/2021/migrate-alpha-policy/
+apiVersion: authentication.istio.io/v1alpha1
+kind: Policy
+metadata:
+  name: default-mtls-null
+  namespace: default
+spec:
+  peers:
+    - mtls:

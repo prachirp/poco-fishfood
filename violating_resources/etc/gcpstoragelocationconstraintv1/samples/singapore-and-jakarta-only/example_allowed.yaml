@@ -1,0 +1,6 @@
+apiVersion: storage.cnrm.cloud.google.com/v1beta1
+kind: StorageBucket
+metadata:
+  name: bucket-in-permitted-location
+spec:
+  location: asia-southeast1

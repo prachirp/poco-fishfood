@@ -1,0 +1,29 @@
+kind: Suite
+apiVersion: test.gatekeeper.sh/v1alpha1
+metadata:
+  name: k8srestrictnamespaces
+tests:
+  - name: k8srestrictnamespaces
+    template: template.yaml
+    constraint: samples/restrict-default-namespace/constraint.yaml
+    cases:
+      - name: example-allowed
+        object: samples/restrict-default-namespace/example_allowed.yaml
+        assertions:
+          - violations: no
+      - name: example-disallowed
+        object: samples/restrict-default-namespace/example_disallowed.yaml
+        assertions:
+          - violations: yes
+  - name: pci-k8srestrictnamespaces
+    template: template.yaml
+    constraint: samples/pci-dss-3.2.1/11.2.1_restrict-default-namespace.yaml
+    cases:
+      - name: example-allowed
+        object: samples/restrict-default-namespace/example_allowed.yaml
+        assertions:
+          - violations: no
+      - name: example-disallowed
+        object: samples/restrict-default-namespace/example_disallowed.yaml
+        assertions:
+          - violations: yes

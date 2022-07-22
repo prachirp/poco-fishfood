@@ -1,0 +1,16 @@
+name: "Gatekeeper general library"
+description: "General policies from the Gatekeeper OSS library"
+
+third_party {
+  url {
+    type: HOMEPAGE
+    value: "https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/general"
+  }
+  url {
+    type: GIT
+    value: "https://github.com/open-policy-agent/gatekeeper-library.git"
+  }
+  version: "5ba4b4dad404c60655524cfc25adc2477c153c56"
+  last_upgrade_date { year: 2022 month: 6 day: 10 }
+  license_type: NOTICE
+}

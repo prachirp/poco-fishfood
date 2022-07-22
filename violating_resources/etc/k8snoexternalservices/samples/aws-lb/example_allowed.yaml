@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: good-aws-service
+  namespace: default
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+spec:
+  type: LoadBalancer

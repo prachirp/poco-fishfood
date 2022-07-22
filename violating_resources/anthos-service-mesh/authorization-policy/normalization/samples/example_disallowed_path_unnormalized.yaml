@@ -1,0 +1,19 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: path-unnormalized
+spec:
+  selector:
+    matchLabels:
+      app: httpbin
+  action: ALLOW
+  rules:
+  - to:
+    - operation:
+        methods: ["GET"]
+        paths: ["/test\\/foo"]
+  - when:
+    - key: source.ip
+      values: ["10.1.2.3", "10.2.0.0/16"]
+    - key: request.headers[User-Agent]
+      values: ["Mozilla/*"]

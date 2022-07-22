@@ -1,0 +1,37 @@
+kind: Suite
+apiVersion: test.gatekeeper.sh/v1alpha1
+metadata:
+  name: asm-peer-authn-mesh-strict-mtls
+tests:
+  - name: asm-peer-authn-mesh-strict-mtls-with-input
+    template: template.yaml
+    constraint: samples/constraint_with_input.yaml
+    cases:
+      - name: no-mesh-strict-mtls
+        object: samples/constraint_with_input.yaml
+        inventory:
+          - samples/example_disallowed_custom_root_ns.yaml
+        assertions:
+          - violations: yes
+      - name: mesh-strict-mtls
+        object: samples/constraint_with_input.yaml
+        inventory:
+          - samples/example_allowed_custom_root_ns.yaml
+        assertions:
+          - violations: no
+  - name: asm-peer-authn-mesh-strict-mtls-no-input
+    template: template.yaml
+    constraint: samples/constraint_no_input.yaml
+    cases:
+      - name: no-mesh-strict-mtls
+        object: samples/constraint_no_input.yaml
+        inventory:
+          - samples/example_disallowed_default_root_ns.yaml
+        assertions:
+          - violations: yes
+      - name: mesh-strict-mtls
+        object: samples/constraint_no_input.yaml
+        inventory:
+          - samples/example_allowed_default_root_ns.yaml
+        assertions:
+          - violations: no

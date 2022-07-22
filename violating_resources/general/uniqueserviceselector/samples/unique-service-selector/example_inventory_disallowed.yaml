@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata: # kpt-merge: default/gatekeeper-test-service-example
+  name: gatekeeper-test-service-example
+  namespace: default
+spec:
+  ports:
+    - port: 443
+  selector:
+    key: value

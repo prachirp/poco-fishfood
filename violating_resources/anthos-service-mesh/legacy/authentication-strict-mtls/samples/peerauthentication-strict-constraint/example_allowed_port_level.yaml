@@ -1,0 +1,11 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: mode-strict-port-level
+  namespace: default
+spec:
+  mtls:
+    mode: STRICT
+  portLevelMtls:
+    "8080":
+      mode: STRICT

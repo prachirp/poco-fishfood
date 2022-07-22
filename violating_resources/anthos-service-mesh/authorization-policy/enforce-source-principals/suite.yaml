@@ -1,0 +1,25 @@
+kind: Suite
+apiVersion: test.gatekeeper.sh/v1alpha1
+metadata:
+  name: asm-enforce-source-principals
+tests:
+  - name: asm-authz-policy-enforce-source-principals
+    template: template.yaml
+    constraint: samples/constraint.yaml
+    cases:
+      - name: example-allowed
+        object: samples/example_allowed.yaml
+        assertions:
+          - violations: no
+      - name: no-principals
+        object: samples/example_disallowed_no_principals.yaml
+        assertions:
+          - violations: yes
+      - name: wildcard-principal
+        object: samples/example_disallowed_principals_wildcard.yaml
+        assertions:
+          - violations: yes
+      - name: non-wildcard-and-wildcard
+        object: samples/example_disallowed_wildcard_and_other.yaml
+        assertions:
+          - violations: yes

@@ -1,0 +1,16 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: valid-strict-mtls-pa
+  namespace: foo
+spec:
+  selector:
+    matchLabels:
+      app: bar
+  mtls:
+    mode: UNSET
+  portLevelMtls:
+    "80":
+      mode: UNSET
+    "443":
+      mode: STRICT

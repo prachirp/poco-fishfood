@@ -1,0 +1,13 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sProhibitRoleWildcardAccess
+metadata:
+  name: prohibit-wildcard-except-exempted-cluster-role
+spec:
+  enforcementAction: dryrun
+  parameters:
+    exemptions:
+      clusterRoles:
+        - name: "cluster-role-allowed-example"
+      roles:
+        - name: "role-allowed-example"
+          namespace: "role-ns-allowed-example"

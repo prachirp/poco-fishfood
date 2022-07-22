@@ -1,0 +1,19 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: general
+upstream:
+  type: git
+  git:
+    repo: https://github.com/open-policy-agent/gatekeeper-library.git
+    directory: /library/general
+    ref: master
+  updateStrategy: resource-merge
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/open-policy-agent/gatekeeper-library.git
+    directory: /library/general
+    ref: master
+    commit: 5ba4b4dad404c60655524cfc25adc2477c153c56
+pipeline: {}

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: istio-ingressgateway
+  labels:
+    app: istio-ingressgateway
+    istio: ingressgateway
+spec:
+  containers:
+  - name: istio-proxy
+    image: gcr.io/gke-release/asm/proxyv2:release
+    ports:
+    - containerPort: 15090
+      name: http-envoy-prom
+      protocol: TCP

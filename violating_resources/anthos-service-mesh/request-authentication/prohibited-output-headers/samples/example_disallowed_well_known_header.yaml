@@ -1,0 +1,12 @@
+apiVersion: security.istio.io/v1beta1
+kind: RequestAuthentication
+metadata:
+  name: deny-predefined-output-header
+  namespace: istio-system
+spec:
+  selector:
+    matchLabels:
+      app: istio-ingressgateway
+  jwtRules:
+  - issuer: "example.com"
+    outputPayloadToHeader: "Host"

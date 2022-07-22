@@ -1,0 +1,16 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: invalid-port-disable-mtls-pa
+  namespace: foo
+spec:
+  selector:
+    matchLabels:
+      app: bar
+  mtls:
+    mode: UNSET
+  portLevelMtls:
+    "80":
+      mode: DISABLE
+    "443":
+      mode: STRICT

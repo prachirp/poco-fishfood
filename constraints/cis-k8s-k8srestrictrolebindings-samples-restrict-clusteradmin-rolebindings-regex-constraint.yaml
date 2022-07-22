@@ -1,0 +1,16 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRestrictRoleBindings
+metadata:
+  name: restrict-clusteradmin-rolebindings-regex
+spec:
+  enforcementAction: dryrun
+  parameters:
+    restrictedRole:
+      apiGroup: "rbac.authorization.k8s.io"
+      kind: "ClusterRole"
+      name: "cluster-admin"
+    allowedSubjects:
+    - apiGroup: "rbac.authorization.k8s.io"
+      kind: "User"
+      name: "^service-[0-9]+@gcp-sa-anthosconfigmanagement.iam.gserviceaccount.com$"
+      regexMatch: true

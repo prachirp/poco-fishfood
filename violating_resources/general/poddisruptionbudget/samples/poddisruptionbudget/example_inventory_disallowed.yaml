@@ -1,0 +1,11 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata: # kpt-merge: default/inventory-nginx-pdb-disallowed
+  name: inventory-nginx-pdb-disallowed
+  namespace: default
+spec:
+  minAvailable: 3
+  selector:
+    matchLabels:
+      app: nginx
+      example: disallowed-deployment

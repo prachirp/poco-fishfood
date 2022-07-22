@@ -1,0 +1,17 @@
+kind: Suite
+apiVersion: test.gatekeeper.sh/v1alpha1
+metadata:
+  name: k8slocalstoragerequiresafetoevict
+tests:
+  - name: k8slocalstoragerequiresafetoevict
+    template: template.yaml
+    constraint: samples/local-storage-require-safe-to-evict/constraint.yaml
+    cases:
+      - name: example-allowed
+        object: samples/local-storage-require-safe-to-evict/example_allowed.yaml
+        assertions:
+          - violations: no
+      - name: example-disallowed
+        object: samples/local-storage-require-safe-to-evict/example_disallowed.yaml
+        assertions:
+          - violations: yes

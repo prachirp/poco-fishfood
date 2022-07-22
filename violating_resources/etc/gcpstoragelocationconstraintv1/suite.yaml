@@ -1,0 +1,21 @@
+kind: Suite
+apiVersion: test.gatekeeper.sh/v1alpha1
+metadata:
+  name: gcpstoragelocationconstraintv1
+tests:
+  - name: gcpstoragelocationconstraintv1
+    template: template.yaml
+    constraint: samples/singapore-and-jakarta-only/constraint.yaml
+    cases:
+      - name: bucket-in-permitted-location
+        object: samples/singapore-and-jakarta-only/example_allowed.yaml
+        assertions:
+          - violations: no
+      - name: bucket-in-disallowed-location
+        object: samples/singapore-and-jakarta-only/example_disallowed.yaml
+        assertions:
+          - violations: yes
+      - name: bucket-without-specific-location
+        object: samples/singapore-and-jakarta-only/example_disallowed2.yaml
+        assertions:
+          - violations: yes

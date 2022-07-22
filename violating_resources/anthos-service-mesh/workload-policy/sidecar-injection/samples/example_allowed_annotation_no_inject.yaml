@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: sleep
+  name: example_allowed_annotation_no_inject
   annotations:
     "false": "false"
 spec:

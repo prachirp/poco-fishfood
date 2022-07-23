@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: example_disallowed_istio_ingressgateway_label_wrong_image
+  name: example-disallowed-istio-ingressgateway-label-wrong-image
   labels:
     app: sleep
     istio: ingressgateway

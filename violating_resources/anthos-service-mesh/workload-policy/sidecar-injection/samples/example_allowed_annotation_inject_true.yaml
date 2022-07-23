@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: example_allowed_annotation_inject_true
+  name: example-allowed-annotation-inject-true
   annotations:
     sidecar.istio.io/inject: "true"
 spec:

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: example_allowed_normal_label_on_workload_pod
+  name: example-allowed-normal-label-on-workload-pod
   labels:
     app: sleep
     istio: istio

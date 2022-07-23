@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: # kpt-merge: /allowed-deployment
-  name: allowed-deployment
+  name: replicalimits-example-allowed
 spec:
   selector:
     matchLabels:

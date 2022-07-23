@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: # kpt-merge: /nginx-forbidden-sysctls-disallowed
-  name: nginx-forbidden-sysctls-disallowed
+  name: psp-forbidden-sysctls-example-disallowed
   labels:
     app: nginx-forbidden-sysctls
 spec:

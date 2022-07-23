@@ -6,7 +6,7 @@ metadata: # kpt-merge: /system:aggregate-to-edit
   labels:
     kubernetes.io/bootstrapping: rbac-defaults
     rbac.authorization.k8s.io/aggregate-to-edit: "true"
-  name: system:aggregate-to-edit
+  name: block-endpoint-edit-default-role-example-allowed
 rules:
 - apiGroups:
   - ""

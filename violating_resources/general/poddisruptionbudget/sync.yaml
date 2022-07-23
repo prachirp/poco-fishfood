@@ -1,7 +1,7 @@
 apiVersion: config.gatekeeper.sh/v1alpha1
 kind: Config
 metadata: # kpt-merge: gatekeeper-system/config
-  name: config
+  name: poddisruptionbudget-sync
   namespace: "gatekeeper-system"
 spec:
   sync:

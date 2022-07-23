@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: # kpt-merge: /nginx-seccomp-disallowed
-  name: nginx-seccomp-disallowed
+  name: psp-seccomp-disallowed-ephemeral
   annotations:
     container.seccomp.security.alpha.kubernetes.io/nginx: unconfined
   labels:

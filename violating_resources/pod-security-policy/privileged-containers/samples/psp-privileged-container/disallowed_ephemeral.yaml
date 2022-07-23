@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: # kpt-merge: /nginx-privileged-disallowed
-  name: nginx-privileged-disallowed
+  name: psp-privileged-container-disallowed-ephemeral
   labels:
     app: nginx-privileged
 spec:

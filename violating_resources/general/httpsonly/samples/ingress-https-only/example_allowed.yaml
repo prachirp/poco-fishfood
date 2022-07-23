@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata: # kpt-merge: /ingress-demo-disallowed
-  name: ingress-demo-disallowed
+  name: ingress-https-only-example-allowed
   annotations:
     kubernetes.io/ingress.allow-http: "false"
 spec:

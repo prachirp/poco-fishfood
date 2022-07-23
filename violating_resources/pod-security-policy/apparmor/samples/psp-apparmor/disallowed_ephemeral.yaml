@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: # kpt-merge: /nginx-apparmor-disallowed
-  name: nginx-apparmor-disallowed
+  name: psp-apparmor-disallowed-ephemeral
   annotations:
     # apparmor.security.beta.kubernetes.io/pod: unconfined # runtime/default
     container.apparmor.security.beta.kubernetes.io/nginx: unconfined

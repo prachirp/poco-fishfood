@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata: # kpt-merge: /wildcard-ingress
-  name: wildcard-ingress
+  name: block-wildcard-ingress-disallowed-blank-host
 spec:
   rules:
   - host: ''

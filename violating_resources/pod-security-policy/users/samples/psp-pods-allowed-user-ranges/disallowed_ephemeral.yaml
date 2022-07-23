@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: # kpt-merge: /nginx-users-disallowed
-  name: nginx-users-disallowed
+  name: psp-pods-allowed-user-ranges-disallowed-ephemeral
   labels:
     app: nginx-users
 spec:

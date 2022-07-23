@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: # kpt-merge: /nginx-selinux-disallowed
-  name: nginx-selinux-disallowed
+  name: psp-selinux-v2-disallowed-ephemeral
   labels:
     app: nginx-selinux
 spec:

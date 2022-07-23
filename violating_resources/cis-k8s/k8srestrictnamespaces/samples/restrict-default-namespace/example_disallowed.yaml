@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: disallowed-example
+  name: restrict-default-namespace-example-disallowed
   namespace: default
 spec:
   containers:

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: # kpt-merge: /opa-allowed
-  name: opa-allowed
+  name: container-image-must-have-digest-example-allowed
 spec:
   containers:
     - name: opa

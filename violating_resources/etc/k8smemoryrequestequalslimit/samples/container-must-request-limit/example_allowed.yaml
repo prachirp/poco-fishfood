@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: good-pod
+  name: container-must-request-limit-example-allowed
   namespace: default
 spec:
   containers:

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: # kpt-merge: /opa-disallowed
-  name: opa-disallowed
+  name: no-enforcements-only-cpu-requests-and-memory-limits-defined-allowed
   labels:
     owner: me.agilebank.demo
 spec:

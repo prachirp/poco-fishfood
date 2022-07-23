@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: disallowed-example
+  name: pods-require-security-context-example-disallowed
 spec:
   containers:
     - name: nginx

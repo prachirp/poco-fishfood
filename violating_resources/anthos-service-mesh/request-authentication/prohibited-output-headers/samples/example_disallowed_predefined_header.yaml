@@ -1,7 +1,7 @@
 apiVersion: security.istio.io/v1beta1
 kind: RequestAuthentication
 metadata:
-  name: deny-predefined-output-header
+  name: example-disallowed-predefined-header
   namespace: istio-system
 spec:
   selector:

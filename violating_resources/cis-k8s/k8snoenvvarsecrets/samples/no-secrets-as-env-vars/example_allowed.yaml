@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: allowed-example
+  name: no-secrets-as-env-vars-example-allowed
 spec:
   containers:
   - name: test

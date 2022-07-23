@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: # kpt-merge: /test-pod1
-  name: test-pod1
+  name: must-have-probes-example-disallowed
 spec:
   containers:
   - name: nginx-1

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: # kpt-merge: /opa-disallowed
-  name: opa-disallowed
+  name: container-must-have-requests-example-disallowed
   labels:
     owner: me.agilebank.demo
 spec:

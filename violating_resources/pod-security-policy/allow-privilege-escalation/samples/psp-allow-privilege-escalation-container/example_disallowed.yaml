@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: # kpt-merge: /nginx-privilege-escalation-disallowed
-  name: nginx-privilege-escalation-disallowed
+  name: psp-allow-privilege-escalation-container-example-disallowed
   labels:
     app: nginx-privilege-escalation
 spec:

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: # kpt-merge: /nginx-readonlyrootfilesystem-disallowed
-  name: nginx-readonlyrootfilesystem-disallowed
+  name: psp-readonlyrootfilesystem-example-disallowed
   labels:
     app: nginx-readonlyrootfilesystem
 spec:

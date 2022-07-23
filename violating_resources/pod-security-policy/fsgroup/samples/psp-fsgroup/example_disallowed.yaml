@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: # kpt-merge: /fsgroup-disallowed
-  name: fsgroup-disallowed
+  name: psp-fsgroup-example-disallowed
 spec:
   securityContext:
     fsGroup: 2000 # directory will have group ID 2000

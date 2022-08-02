@@ -5,8 +5,15 @@ metadata: # kpt-merge: /nginx-privilege-escalation-disallowed
   labels:
     app: nginx-privilege-escalation
 spec:
-  ephemeralContainers:
+  containers:
   - name: nginx
+    image: nginx
+    resources:
+      limits:
+        cpu: "100m"
+        memory: "30Mi"
+  ephemeralContainers:
+  - name: nginx2
     image: nginx
     securityContext:
       allowPrivilegeEscalation: true

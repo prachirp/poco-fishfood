@@ -5,6 +5,13 @@ metadata: # kpt-merge: /opa-disallowed
   labels:
     owner: me.agilebank.demo
 spec:
+  containers:
+  - name: nginx
+    image: nginx
+    resources:
+      limits:
+        cpu: "100m"
+        memory: "30Mi"
   ephemeralContainers:
     - name: opa
       image: openpolicyagent/opa:0.9.2

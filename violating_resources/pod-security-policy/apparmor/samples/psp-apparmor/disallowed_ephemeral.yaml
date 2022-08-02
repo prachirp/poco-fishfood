@@ -8,6 +8,13 @@ metadata: # kpt-merge: /nginx-apparmor-disallowed
   labels:
     app: nginx-apparmor
 spec:
-  ephemeralContainers:
+  containers:
   - name: nginx
+    image: nginx
+    resources:
+      limits:
+        cpu: "100m"
+        memory: "30Mi"
+  ephemeralContainers:
+  - name: nginx2
     image: nginx

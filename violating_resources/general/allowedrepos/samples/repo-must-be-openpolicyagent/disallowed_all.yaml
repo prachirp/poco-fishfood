@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: # kpt-merge: /nginx-disallowed
-  name: disallowed-all
+  name: repo-must-be-openpolicyagent-disallowed-all
 spec:
   initContainers:
   - name: nginx
@@ -18,7 +18,7 @@ spec:
         cpu: "100m"
         memory: "30Mi"
   ephemeralContainers:
-  - name: nginx
+  - name: nginx2
     image: nginx
     resources:
       limits:

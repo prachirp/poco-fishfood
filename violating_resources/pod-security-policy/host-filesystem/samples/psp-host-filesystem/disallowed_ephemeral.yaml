@@ -5,8 +5,15 @@ metadata: # kpt-merge: /nginx-host-filesystem
   labels:
     app: nginx-host-filesystem-disallowed
 spec:
-  ephemeralContainers:
+  containers:
   - name: nginx
+    image: nginx
+    resources:
+      limits:
+        cpu: "100m"
+        memory: "30Mi"
+  ephemeralContainers:
+  - name: nginx2
     image: nginx
     volumeMounts:
     - mountPath: /cache

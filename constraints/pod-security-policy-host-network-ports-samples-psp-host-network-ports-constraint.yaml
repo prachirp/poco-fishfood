@@ -3,6 +3,7 @@ kind: K8sPSPHostNetworkingPorts
 metadata: # kpt-merge: /psp-host-network-ports
   name: psp-host-network-ports-sample
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

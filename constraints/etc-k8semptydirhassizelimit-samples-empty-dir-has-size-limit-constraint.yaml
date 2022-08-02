@@ -3,5 +3,6 @@ kind: K8sEmptyDirHasSizeLimit
 metadata:
   name: empty-dir-has-size-limit
 spec:
+  enforcementAction: warn
   parameters:
     maxSizeLimit: 4Gi

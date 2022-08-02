@@ -3,7 +3,7 @@ kind: GCPStorageLocationConstraintV1
 metadata:
   name: singapore-and-jakarta-only
 spec:
-  enforcementAction: deny
+  enforcementAction: warn
   match:
     kinds:
     - apiGroups:

@@ -3,5 +3,6 @@ kind: K8sNoExternalServices
 metadata:
   name: no-external
 spec:
+  enforcementAction: warn
   parameters:
     internalCIDRs: ["10.0.0.1/32"]

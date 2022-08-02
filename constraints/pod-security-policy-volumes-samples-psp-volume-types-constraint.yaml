@@ -3,6 +3,7 @@ kind: K8sPSPVolumeTypes
 metadata: # kpt-merge: /psp-volume-types
   name: psp-volume-types
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

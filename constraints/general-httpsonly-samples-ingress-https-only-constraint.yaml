@@ -3,6 +3,7 @@ kind: K8sHttpsOnly
 metadata: # kpt-merge: /ingress-https-only
   name: ingress-https-only
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: ["extensions", "networking.k8s.io"]

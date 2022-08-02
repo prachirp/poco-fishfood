@@ -3,6 +3,7 @@ kind: K8sDisallowedRoleBindingSubjects
 metadata:
   name: disallowed-rolebinding-subjects
 spec:
+  enforcementAction: warn
   parameters:
     disallowedSubjects:
     - name: 'system:unauthenticated'

@@ -3,6 +3,7 @@ kind: K8sImageDigests
 metadata: # kpt-merge: /container-image-must-have-digest
   name: container-image-must-have-digest
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

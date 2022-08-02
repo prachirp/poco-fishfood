@@ -3,6 +3,7 @@ kind: K8sContainerLimits
 metadata: # kpt-merge: /container-must-have-limits
   name: container-must-have-limits
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

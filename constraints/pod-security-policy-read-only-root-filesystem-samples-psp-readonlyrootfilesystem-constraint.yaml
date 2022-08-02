@@ -3,6 +3,7 @@ kind: K8sPSPReadOnlyRootFilesystem
 metadata: # kpt-merge: /psp-readonlyrootfilesystem
   name: psp-readonlyrootfilesystem
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

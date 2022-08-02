@@ -16,7 +16,7 @@ kind: AllowedServicePortName
 metadata:
   name: port-name-constraint
 spec:
-  enforcementAction: deny
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

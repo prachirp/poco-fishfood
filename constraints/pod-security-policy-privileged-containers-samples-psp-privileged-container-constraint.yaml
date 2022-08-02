@@ -3,6 +3,7 @@ kind: K8sPSPPrivilegedContainer
 metadata: # kpt-merge: /psp-privileged-container
   name: psp-privileged-container-sample
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

@@ -3,6 +3,7 @@ kind: K8sUniqueIngressHost
 metadata: # kpt-merge: /unique-ingress-host
   name: unique-ingress-host
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: ["extensions", "networking.k8s.io"]

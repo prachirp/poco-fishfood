@@ -3,6 +3,7 @@ kind: K8sPSPFSGroup
 metadata: # kpt-merge: /psp-fsgroup
   name: psp-fsgroup
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

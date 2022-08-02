@@ -3,6 +3,7 @@ kind: K8sRequiredProbes
 metadata: # kpt-merge: /must-have-probes
   name: must-have-probes
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

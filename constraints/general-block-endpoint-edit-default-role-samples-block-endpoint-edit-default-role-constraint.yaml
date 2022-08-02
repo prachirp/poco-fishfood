@@ -3,6 +3,7 @@ kind: K8sBlockEndpointEditDefaultRole
 metadata: # kpt-merge: /block-endpoint-edit-default-role
   name: block-endpoint-edit-default-role
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: ["rbac.authorization.k8s.io"]

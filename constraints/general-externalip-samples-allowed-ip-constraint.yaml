@@ -3,6 +3,7 @@ kind: K8sExternalIPs
 metadata: # kpt-merge: /external-ips
   name: external-ips
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

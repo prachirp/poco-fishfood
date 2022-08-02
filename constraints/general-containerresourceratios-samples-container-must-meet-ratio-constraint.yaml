@@ -3,6 +3,7 @@ kind: K8sContainerRatios
 metadata: # kpt-merge: /container-must-meet-ratio
   name: container-must-meet-ratio
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

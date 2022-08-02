@@ -3,6 +3,7 @@ kind: K8sRequiredAnnotations
 metadata: # kpt-merge: /all-must-have-certain-set-of-annotations
   name: all-must-have-certain-set-of-annotations
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

@@ -3,6 +3,7 @@ kind: K8sPSPCapabilities
 metadata: # kpt-merge: /capabilities-demo
   name: capabilities-demo
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

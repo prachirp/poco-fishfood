@@ -3,6 +3,7 @@ kind: K8sPSPHostFilesystem
 metadata: # kpt-merge: /psp-host-filesystem
   name: psp-host-filesystem
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

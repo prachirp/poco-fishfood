@@ -4,3 +4,5 @@ metadata: # kpt-merge: /unique-service-selector
   name: unique-service-selector
   labels:
     owner: admin.agilebank.demo
+spec:
+  enforcementAction: warn

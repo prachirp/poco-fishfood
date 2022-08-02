@@ -3,6 +3,7 @@ kind: K8sReplicaLimits
 metadata: # kpt-merge: /replica-limits
   name: replica-limits
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: ["apps"]

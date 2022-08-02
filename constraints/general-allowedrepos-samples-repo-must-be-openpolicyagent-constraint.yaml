@@ -3,6 +3,7 @@ kind: K8sAllowedRepos
 metadata: # kpt-merge: /repo-is-openpolicyagent
   name: repo-is-openpolicyagent
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

@@ -3,6 +3,7 @@ kind: K8sPSPFlexVolumes
 metadata: # kpt-merge: /psp-flexvolume-drivers
   name: psp-flexvolume-drivers
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

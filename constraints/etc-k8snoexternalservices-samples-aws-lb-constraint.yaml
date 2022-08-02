@@ -3,5 +3,6 @@ kind: K8sNoExternalServices
 metadata:
   name: no-external-aws
 spec:
+  enforcementAction: warn
   parameters:
     cloudPlatform: "AWS"

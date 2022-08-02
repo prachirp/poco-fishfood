@@ -3,6 +3,7 @@ kind: K8sRequiredLabels
 metadata: # kpt-merge: /all-must-have-owner
   name: all-must-have-owner
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

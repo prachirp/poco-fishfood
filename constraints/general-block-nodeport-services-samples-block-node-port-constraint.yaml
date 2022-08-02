@@ -3,6 +3,7 @@ kind: K8sBlockNodePort
 metadata: # kpt-merge: /block-node-port
   name: block-node-port
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

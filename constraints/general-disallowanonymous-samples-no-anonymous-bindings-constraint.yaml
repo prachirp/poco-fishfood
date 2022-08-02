@@ -3,6 +3,7 @@ kind: K8sDisallowAnonymous
 metadata: # kpt-merge: /no-anonymous
   name: no-anonymous
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: ["rbac.authorization.k8s.io"]

@@ -3,6 +3,7 @@ kind: K8sContainerRatios
 metadata: # kpt-merge: /container-must-meet-memory-and-cpu-ratio
   name: container-must-meet-memory-and-cpu-ratio
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: [""]

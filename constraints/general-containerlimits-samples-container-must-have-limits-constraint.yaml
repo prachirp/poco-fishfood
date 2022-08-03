@@ -8,6 +8,10 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
+    excludedNamespaces:
+      - config-management-system
+      - gatekeeper-system
+      - kube-system
   parameters:
     cpu: "200m"
     memory: "1Gi"

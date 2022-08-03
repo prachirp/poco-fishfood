@@ -4,3 +4,8 @@ metadata:
   name: local-storage-require-safe-to-evict
 spec:
   enforcementAction: warn
+  match:
+    excludedNamespaces:
+      - config-management-system
+      - gatekeeper-system
+      - kube-system

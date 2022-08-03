@@ -8,3 +8,6 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
+    excludedNamespaces:
+      - config-management-system
+      - kube-system

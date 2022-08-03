@@ -4,3 +4,10 @@ metadata:
   name: require-namespace-network-policies-sample
 spec:
   enforcementAction: dryrun
+  match:
+    excludedNamespaces:
+      - config-management-monitoring
+      - config-management-system
+      - gatekeeper-system
+      - gke-connect
+      - kube-system

@@ -4,3 +4,6 @@ metadata:
   name: container-must-request-limit
 spec:
   enforcementAction: warn
+  match:
+    excludedNamespaces:
+      - kube-system

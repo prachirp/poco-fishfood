@@ -8,6 +8,11 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
+    excludedNamespaces:
+      - config-management-monitoring
+      - config-management-system
+      - gke-connect
+      - kube-system
   parameters:
     rule: "MayRunAs" #"MustRunAs" #"MayRunAs", "RunAsAny"
     ranges:

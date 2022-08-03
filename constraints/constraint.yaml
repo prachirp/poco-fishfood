@@ -28,5 +28,10 @@ spec:
         #     - key: istio-injection
         #       operator: In
         #       values: ["enabled"]
+    excludedNamespaces:
+      - config-management-monitoring
+      - gatekeeper-system
+      - gke-connect
+      - kube-system
   parameters:
     prefixes: ["http-", "http2-", "grpc-", "mongo-", "redis-", "tcp-"]

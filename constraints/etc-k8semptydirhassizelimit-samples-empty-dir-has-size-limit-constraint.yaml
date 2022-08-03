@@ -4,5 +4,10 @@ metadata:
   name: empty-dir-has-size-limit
 spec:
   enforcementAction: warn
+  match:
+    excludedNamespaces:
+      - config-management-system
+      - gatekeeper-system
+      - kube-system
   parameters:
     maxSizeLimit: 4Gi

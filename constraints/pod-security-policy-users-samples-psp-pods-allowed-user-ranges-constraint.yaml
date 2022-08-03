@@ -8,6 +8,8 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
+    excludedNamespaces:
+      - kube-system
   parameters:
     runAsUser:
       rule: MustRunAs # MustRunAsNonRoot # RunAsAny 

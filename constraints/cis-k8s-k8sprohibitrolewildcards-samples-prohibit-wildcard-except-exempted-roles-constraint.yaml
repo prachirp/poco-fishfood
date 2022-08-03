@@ -4,6 +4,10 @@ metadata:
   name: prohibit-wildcard-except-exempted-cluster-role
 spec:
   enforcementAction: dryrun
+  match:
+    excludedNamespaces:
+      - gke-connect
+      - resource-group-system
   parameters:
     exemptions:
       clusterRoles:

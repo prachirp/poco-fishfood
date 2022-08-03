@@ -10,7 +10,9 @@ spec:
         kinds: ["Pod"]
     excludedNamespaces:
       - config-management-system
+      - gke-connect
       - kube-system
+      - resource-group-system
   parameters:
     probes: ["readinessProbe", "livenessProbe"]
     probeTypes: ["tcpSocket", "httpGet", "exec"]

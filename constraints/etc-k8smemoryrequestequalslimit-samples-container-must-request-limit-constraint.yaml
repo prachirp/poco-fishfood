@@ -6,4 +6,7 @@ spec:
   enforcementAction: warn
   match:
     excludedNamespaces:
+      - config-management-monitoring
+      - config-management-system
       - kube-system
+      - resource-group-system

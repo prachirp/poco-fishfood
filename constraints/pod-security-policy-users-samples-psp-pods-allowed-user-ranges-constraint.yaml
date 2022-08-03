@@ -9,7 +9,9 @@ spec:
       - apiGroups: [""]
         kinds: ["Pod"]
     excludedNamespaces:
+      - config-management-system
       - kube-system
+      - resource-group-system
   parameters:
     runAsUser:
       rule: MustRunAs # MustRunAsNonRoot # RunAsAny 

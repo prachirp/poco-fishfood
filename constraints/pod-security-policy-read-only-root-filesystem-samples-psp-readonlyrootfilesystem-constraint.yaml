@@ -10,4 +10,5 @@ spec:
         kinds: ["Pod"]
     excludedNamespaces:
       - config-management-system
+      - gke-connect
       - kube-system

@@ -9,8 +9,11 @@ spec:
       - apiGroups: [""]
         kinds: ["Pod"]
     excludedNamespaces:
+      - config-management-monitoring
       - config-management-system
+      - gke-connect
       - kube-system
+      - resource-group-system
   parameters:
     ratio: "1"
     cpuRatio: "10"

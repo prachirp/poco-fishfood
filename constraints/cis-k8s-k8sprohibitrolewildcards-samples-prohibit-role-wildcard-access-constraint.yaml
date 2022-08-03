@@ -4,3 +4,7 @@ metadata:
   name: prohibit-role-wildcard-access-sample
 spec:
   enforcementAction: dryrun
+  match:
+    excludedNamespaces:
+      - gke-connect
+      - resource-group-system

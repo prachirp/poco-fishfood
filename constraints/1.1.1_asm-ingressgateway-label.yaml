@@ -1,4 +1,4 @@
-# Copyright 2022 Google LLC
+# Copyright 2023 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,14 +14,28 @@
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: AsmIngressgatewayLabel
 metadata:
-  name: asm-ingressgateway-label
+  name: asm-policy-v0.0.1-asm-ingressgateway-label
+  labels:
+    policycontroller.gke.io/bundleName: asm-policy-v0.0.1
   annotations:
-    description: "Enforce the istio ingressgateway label usage only on ingressgateway pods."
-    bundles.validator.forsetisecurity.org/asm-policy-v0.0.1: 1.1.1
-    policy.library/doc-gen: "do_not_document"
+    policycontroller.gke.io/constraintData: |
+      "{
+        bundleName: 'asm-policy-v0.0.1',
+        bundleDisplayName: 'Anthos Service Mesh v0.0.1',
+        bundleLink: 'https://cloud.google.com/anthos-config-management/docs/how-to/using-asm-security-policy',
+        bundleVersion: '202301.0',
+        bundleDescription: 'Use the ASM Policy v0.0.1 policy bundle with Anthos Policy Controller to evaluate the compliance of your clusters running Anthos Service Mesh against service mesh security best practices.',
+        controlNumbers: '[1.1.1]',
+        severity: 'UNASSIGNED',
+        description: 'Enforce the istio ingressgateway label usage only on ingressgateway pods.',
+        remediation: 'Remove istio:ingressgateway label from the non ingressgateway pods.',
+        minimumTemplateLibraryVersion: '1.11.2'
+      }"
 spec:
   enforcementAction: dryrun
   match:
     kinds:
-      - apiGroups: [""]
-        kinds: ["Pod"]
+      - apiGroups:
+          - ""
+        kinds:
+          - Pod
